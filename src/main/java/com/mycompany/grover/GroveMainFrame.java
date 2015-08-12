@@ -7,6 +7,7 @@ package com.mycompany.grover;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -193,11 +194,13 @@ public class MainFrameActionListener implements ActionListener{
             }
             
             if(source.equals(rnaSeqDiffButton)){
-                new RNASeqDiffFrame().setVisible(true);
+                //new RNASeqDiffFrame().setVisible(true);
+                JOptionPane.showMessageDialog(null, "Not yet implemented");
             }
             
             if(source.equals(pileupGeneMapperButton)){
-                new PileupGeneMapperFrame().setVisible(true);
+                //new PileupGeneMapperFrame().setVisible(true);
+                JOptionPane.showMessageDialog(null, "Not yet implemented");
             }
         }
     
