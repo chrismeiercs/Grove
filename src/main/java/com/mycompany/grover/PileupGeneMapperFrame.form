@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="genbankFileButtonGroup">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="codonSelectionButtonGroup">
+    </Component>
+  </NonVisualComponents>
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="allStopCodonsRadioButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <Component id="allStartCodonsRadioButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="upstreamNtNumLabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="downstreamNtNumLabel" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="downstreamNtsNumField" pref="58" max="32767" attributes="0"/>
+                          <Component id="upstreamNtsNumField" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+                      <Component id="numNucleotidesTitleLabel" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="genbankFileTitleLabel" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="uploadGenbankFileRadioButton" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="selectGenbankFileButton" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="genbankFileNameLabel" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="fetchGenbankFileRadioButton" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="enterAccessionNumberField" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="emailLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="enterEmailTextField" min="-2" pref="189" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="145" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="quantifyButton" min="-2" max="-2" attributes="0"/>
+                          <Component id="parametersTitleLabel" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
+                      <Component id="pileupGeneMapperTitleLabel" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace pref="35" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="pileupGeneMapperTitleLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+              <Component id="genbankFileTitleLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="uploadGenbankFileRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="selectGenbankFileButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="genbankFileNameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="fetchGenbankFileRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="enterAccessionNumberField" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="emailLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="enterEmailTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="parametersTitleLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="numNucleotidesTitleLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="downstreamNtNumLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="downstreamNtsNumField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="allStartCodonsRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="allStopCodonsRadioButton" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="upstreamNtsNumField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="upstreamNtNumLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace pref="32" max="32767" attributes="0"/>
+              <Component id="quantifyButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="pileupGeneMapperTitleLabel">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Ubuntu" size="24" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Pileup Gene Mapper"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="uploadGenbankFileRadioButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Upload"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="fetchGenbankFileRadioButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Fetch From Genbank"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="genbankFileTitleLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Annotated Genbank File"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="selectGenbankFileButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Select Genbank File"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="enterAccessionNumberField">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Accession Number"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="genbankFileNameLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Genbank File Name"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="allStartCodonsRadioButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="All Start Codons"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="emailLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Email:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="enterEmailTextField">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Enter Email"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="parametersTitleLabel">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Ubuntu" size="15" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Parameters"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="allStopCodonsRadioButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="All Stop Codons"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="downstreamNtNumLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Downstream"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="upstreamNtNumLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Upstream"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="numNucleotidesTitleLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Number of Nucleotides"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="downstreamNtsNumField">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="# nts"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="upstreamNtsNumField">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="# nts"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="quantifyButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Quantify"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>
