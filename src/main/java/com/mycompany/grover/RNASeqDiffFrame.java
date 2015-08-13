@@ -7,6 +7,12 @@ package com.mycompany.grover;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JComboBox;
+import javax.swing.JFileChooser;
 
 /**
  *
@@ -14,12 +20,15 @@ import java.awt.event.ActionListener;
  */
 public class RNASeqDiffFrame extends javax.swing.JFrame {
 
+    private JFileChooser importPileupBox;
+
     /**
      * Creates new form RNASeqDiffFrame
      */
     public RNASeqDiffFrame() {
         initComponents();
         addActionListeners();
+        populateDropdowns();
     }
 
     /**
@@ -37,6 +46,23 @@ public class RNASeqDiffFrame extends javax.swing.JFrame {
         selectUncappedFileButton = new javax.swing.JButton();
         cappedFileNameLabel = new javax.swing.JLabel();
         uncappedFileNameLabel = new javax.swing.JLabel();
+        outputFileLabel = new javax.swing.JLabel();
+        outputFileNameTextField = new javax.swing.JTextField();
+        sampleNameLabel = new javax.swing.JLabel();
+        nucleotideNumberLabel = new javax.swing.JLabel();
+        cappedSampleNameColumn = new javax.swing.JComboBox();
+        cappedNucleotideNumberColumn = new javax.swing.JComboBox();
+        nucleotideLabel = new javax.swing.JLabel();
+        cappedNucleotideColumn = new javax.swing.JComboBox();
+        numberOfHitsLabel = new javax.swing.JLabel();
+        cappedNumberOfHitsColumn = new javax.swing.JComboBox();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        uncappedSampleNameColumn = new javax.swing.JComboBox();
+        uncappedNucleotideNumberColumn = new javax.swing.JComboBox();
+        uncappedNucleotideColumn = new javax.swing.JComboBox();
+        uncappedNumberOfHitsColumn = new javax.swing.JComboBox();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -54,6 +80,41 @@ public class RNASeqDiffFrame extends javax.swing.JFrame {
 
         uncappedFileNameLabel.setText("Uncapped File Name");
 
+        outputFileLabel.setText("Output File Name:");
+
+        outputFileNameTextField.setText("Output File Name");
+
+        sampleNameLabel.setText("Sample Name:");
+
+        nucleotideNumberLabel.setText("Nucleotide Number:");
+
+        cappedSampleNameColumn.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        cappedNucleotideNumberColumn.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        nucleotideLabel.setText("Nucleotide:");
+
+        cappedNucleotideColumn.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        numberOfHitsLabel.setText("Number of Hits:");
+
+        cappedNumberOfHitsColumn.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel5.setText("Capped File");
+
+        jLabel6.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jLabel6.setText("Column Specifications");
+
+        uncappedSampleNameColumn.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        uncappedNucleotideNumberColumn.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        uncappedNucleotideColumn.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        uncappedNumberOfHitsColumn.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel7.setText("Uncapped File");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -61,29 +122,101 @@ public class RNASeqDiffFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(9, 9, 9)
-                                .addComponent(selectCappedFileButton))
-                            .addComponent(selectUncappedFileButton))
-                        .addGap(42, 42, 42)
+                                .addContainerGap()
+                                .addComponent(selectUncappedFileButton))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(selectCappedFileButton)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(sampleNameLabel)
+                                        .addComponent(outputFileLabel)))))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cappedFileNameLabel)
-                            .addComponent(uncappedFileNameLabel)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(42, 42, 42)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cappedFileNameLabel)
+                                    .addComponent(uncappedFileNameLabel)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(outputFileNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(111, 111, 111)
+                        .addGap(139, 139, 139)
                         .addComponent(calculateDifferenceButton))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(116, 116, 116)
-                        .addComponent(rnaSeqDiffLabel)))
-                .addContainerGap(38, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(nucleotideLabel)
+                                    .addComponent(numberOfHitsLabel)
+                                    .addComponent(nucleotideNumberLabel)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel6)))
+                        .addGap(52, 52, 52)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(cappedNucleotideNumberColumn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(uncappedNucleotideNumberColumn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(cappedNucleotideColumn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(uncappedNucleotideColumn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                                .addComponent(jLabel7))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(cappedNumberOfHitsColumn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(uncappedNumberOfHitsColumn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(rnaSeqDiffLabel)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(cappedSampleNameColumn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(uncappedSampleNameColumn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(49, 49, 49))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(rnaSeqDiffLabel)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(outputFileLabel)
+                    .addComponent(outputFileNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel7))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cappedSampleNameColumn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sampleNameLabel)
+                    .addComponent(uncappedSampleNameColumn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cappedNucleotideNumberColumn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nucleotideNumberLabel)
+                    .addComponent(uncappedNucleotideNumberColumn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cappedNucleotideColumn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nucleotideLabel)
+                    .addComponent(uncappedNucleotideColumn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cappedNumberOfHitsColumn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(uncappedNumberOfHitsColumn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(numberOfHitsLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(selectCappedFileButton)
                     .addComponent(cappedFileNameLabel))
@@ -91,9 +224,9 @@ public class RNASeqDiffFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(selectUncappedFileButton)
                     .addComponent(uncappedFileNameLabel))
-                .addGap(33, 33, 33)
+                .addGap(27, 27, 27)
                 .addComponent(calculateDifferenceButton)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addGap(18, 18, 18))
         );
 
         pack();
@@ -138,50 +271,129 @@ public class RNASeqDiffFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton calculateDifferenceButton;
     private javax.swing.JLabel cappedFileNameLabel;
+    private javax.swing.JComboBox cappedNucleotideColumn;
+    private javax.swing.JComboBox cappedNucleotideNumberColumn;
+    private javax.swing.JComboBox cappedNumberOfHitsColumn;
+    private javax.swing.JComboBox cappedSampleNameColumn;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel nucleotideLabel;
+    private javax.swing.JLabel nucleotideNumberLabel;
+    private javax.swing.JLabel numberOfHitsLabel;
+    private javax.swing.JLabel outputFileLabel;
+    private javax.swing.JTextField outputFileNameTextField;
     private javax.swing.JLabel rnaSeqDiffLabel;
+    private javax.swing.JLabel sampleNameLabel;
     private javax.swing.JButton selectCappedFileButton;
     private javax.swing.JButton selectUncappedFileButton;
     private javax.swing.JLabel uncappedFileNameLabel;
+    private javax.swing.JComboBox uncappedNucleotideColumn;
+    private javax.swing.JComboBox uncappedNucleotideNumberColumn;
+    private javax.swing.JComboBox uncappedNumberOfHitsColumn;
+    private javax.swing.JComboBox uncappedSampleNameColumn;
     // End of variables declaration//GEN-END:variables
 
-private void addActionListeners(){
+    private void addActionListeners() {
         RNASeqDiffFrameActionListener listener = new RNASeqDiffFrameActionListener();
         selectCappedFileButton.addActionListener(listener);
         selectUncappedFileButton.addActionListener(listener);
         calculateDifferenceButton.addActionListener(listener);
-    }    
+    }
 
-public class RNASeqDiffFrameActionListener implements ActionListener{
+    private void populateDropdowns() {
+        populateCappedDropdowns();
+        populateUncappedDropdowns();
+
+    }
+
+    private void populateCappedDropdowns() {
+        populateColumnDropdown(cappedSampleNameColumn);
+        populateColumnDropdown(cappedNucleotideNumberColumn);
+        populateColumnDropdown(cappedNucleotideColumn);
+        populateColumnDropdown(cappedNumberOfHitsColumn);
+    }
+
+    private void populateUncappedDropdowns() {
+        populateColumnDropdown(uncappedSampleNameColumn);
+        populateColumnDropdown(uncappedNucleotideNumberColumn);
+        populateColumnDropdown(uncappedNucleotideColumn);
+        populateColumnDropdown(uncappedNumberOfHitsColumn);
+    }
+
+    private void populateColumnDropdown(JComboBox dropdown) {
+        dropdown.removeAllItems();
+        for (int i = 1; i < 5 + 1; i++) {
+            dropdown.addItem(i);
+        }
+    }
+
+    private File makeFileImportBox(boolean isCappedFile) {
+        importPileupBox = new JFileChooser();
+        int result = importPileupBox.showOpenDialog(this);
+        File pileup = null;
+
+        if (result == JFileChooser.APPROVE_OPTION) {
+            if (isCappedFile) {
+                cappedFileNameLabel.setText(importPileupBox.getSelectedFile().getName());
+            } else {
+                uncappedFileNameLabel.setText(importPileupBox.getSelectedFile().getName());
+            }
+
+            pileup = importPileupBox.getSelectedFile();
+        } else if (result == JFileChooser.CANCEL_OPTION) {
+            System.out.println("Cancel");
+            pileup = null;
+        }
+
+        return pileup;
+    }
+
+    public class RNASeqDiffFrameActionListener implements ActionListener {
+
+        private File cappedFile = null;
+        private File uncappedFile = null;
+        private boolean isCapped = true;
 
         @Override
         public void actionPerformed(ActionEvent e) {
             Object source = e.getSource();
-            
-           if(source.equals(selectCappedFileButton)){
-               System.out.println("Select capped file");
-               System.out.println("Open JFileChooser");
-               System.out.println("Get Selected File and store");
-               System.out.println("Add name to label");
-           }
-           
-           if(source.equals(selectUncappedFileButton)){
-               System.out.println("Select uncapped file");
-               System.out.println("Open JFileChooser");
-               System.out.println("Get Selected File and store");
-               System.out.println("Add name to label");
-           }
-           
-           if(source.equals(calculateDifferenceButton)){
-               System.out.println("Calculate Difference");
-               System.out.println("Get parameters");
-               System.out.println("Run Python Script");
-           }
+
+            if (source.equals(selectCappedFileButton)) {
+                this.cappedFile = makeFileImportBox(isCapped);
+            }
+
+            if (source.equals(selectUncappedFileButton)) {
+                this.uncappedFile = makeFileImportBox(!isCapped);
+            }
+
+            if (source.equals(calculateDifferenceButton)) {
+                String outputFileName = outputFileNameTextField.getText();
+
+                int uncappedSampleColumn = (Integer) uncappedSampleNameColumn.getSelectedItem();
+                int uncappedNtNumColumn = (Integer) uncappedNucleotideNumberColumn.getSelectedItem();
+                int uncappedNtColumn = (Integer) uncappedNucleotideColumn.getSelectedItem();
+                int uncappedHitsColumn = (Integer) uncappedNumberOfHitsColumn.getSelectedItem();
+
+                int cappedSampleColumn = (Integer) cappedSampleNameColumn.getSelectedItem();
+                int cappedNtNumColumn = (Integer) cappedNucleotideNumberColumn.getSelectedItem();
+                int cappedNtColumn = (Integer) cappedNucleotideColumn.getSelectedItem();
+                int cappedHitsColumn = (Integer) cappedNumberOfHitsColumn.getSelectedItem();
+
+                RNASeqDiff seqDiff = new RNASeqDiff(this.cappedFile,
+                        this.uncappedFile, outputFileName, uncappedSampleColumn,
+                        uncappedNtNumColumn, uncappedNtColumn, uncappedHitsColumn,
+                        cappedSampleColumn, cappedNtNumColumn, cappedNtColumn,
+                        cappedHitsColumn);
+
+                try {
+                    seqDiff.calculateDifference();
+                } catch (IOException ex) {
+                    Logger.getLogger(RNASeqDiffFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
         }
-    
-}
 
-
-
-
+    }
 
 }
